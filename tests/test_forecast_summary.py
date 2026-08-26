@@ -17,3 +17,10 @@ def test_summarize_forecast_includes_station_in_summary():
     forecast = {"station": "auasi", "wave_height_m": 1.8}
     result = summarize_forecast(forecast)
     assert "auasi" in result["summary"]
+
+
+def test_summarize_forecast_includes_timestamp_in_summary():
+    forecast = {"station": "auasi", "wave_height_m": 1.8, "timestamp": "2026-08-26T06:00:00Z"}
+    result = summarize_forecast(forecast)
+    assert result["timestamp"] == "2026-08-26T06:00:00Z"
+    assert "2026-08-26T06:00:00Z" in result["summary"]
