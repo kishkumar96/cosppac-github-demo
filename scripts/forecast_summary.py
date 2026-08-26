@@ -9,8 +9,8 @@ def summarize_forecast(forecast: dict) -> dict:
     wave_height = forecast.get("wave_height_m", 0)
     timestamp = forecast.get("timestamp", "unknown time")
     return {
-        "station": station,
-        "wave_height_meter": wave_height,
+        "stations": station,
+        "wave_height_meters": wave_height,
         "timestamp": timestamp,
         "summary": f"Station {station}: wave height {wave_height} m (as of {timestamp})",
     }
