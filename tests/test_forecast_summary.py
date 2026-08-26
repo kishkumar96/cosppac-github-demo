@@ -9,8 +9,8 @@ from forecast_summary import summarize_forecast
 def test_summarize_forecast_valid_reading():
     forecast = {"station": "auasi", "wave_height_m": 1.8}
     result = summarize_forecast(forecast)
-    assert result["station"] == "auasi"
-    assert result["wave_height_m"] == 1.8
+    assert result["stations"] == "auasi"
+    assert result["wave_height_meters"] == 1.8
 
 
 def test_summarize_forecast_includes_station_in_summary():
