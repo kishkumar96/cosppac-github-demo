@@ -7,10 +7,12 @@ from pathlib import Path
 def summarize_forecast(forecast: dict) -> dict:
     station = forecast.get("station", "unknown")
     wave_height = forecast.get("wave_height_m", 0)
+    timestamp = forecast.get("timestamp", "unknown time")
     return {
         "station": station,
         "wave_height_m": wave_height,
-        "summary": f"Station {station}: wave height {wave_height} m",
+        "timestamp": timestamp,
+        "summary": f"Station {station}: wave height {wave_height} m (as of {timestamp})",
     }
 
 
